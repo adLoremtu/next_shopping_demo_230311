@@ -2,7 +2,12 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-import { ESection, ESectionTitleWrap, ESectionTitleMain, ESectionTitleSub } from 'components/pages/index/indexCss';
+import {
+  ESection,
+  ESectionTitleWrap,
+  ESectionTitleMain,
+  ESectionTitleSub,
+} from 'components/pages/index/IndexContentsCss';
 import {
   EMenuBoxList,
   EMenuBoxItem,

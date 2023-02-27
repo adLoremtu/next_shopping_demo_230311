@@ -1,6 +1,11 @@
 import Image from 'next/image';
 
-import { ESection, ESectionTitleWrap, ESectionTitleMain, ESectionTitleSub } from 'components/pages/index/indexCss';
+import {
+  ESection,
+  ESectionTitleWrap,
+  ESectionTitleMain,
+  ESectionTitleSub,
+} from 'components/pages/index/IndexContentsCss';
 import {
   ServiceSectionList,
   ServiceSectionItem,

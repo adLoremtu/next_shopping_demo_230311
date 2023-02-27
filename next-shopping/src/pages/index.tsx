@@ -1,5 +1,5 @@
-import { Index } from 'components/pages/index';
+import { IndexContents } from 'components/pages/index/IndexContents';
 
-export default function Home() {
-  return <Index />;
+export default function Index() {
+  return <IndexContents />;
 }

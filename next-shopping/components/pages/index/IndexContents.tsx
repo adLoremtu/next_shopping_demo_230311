@@ -7,7 +7,7 @@ import { MenuSection } from 'components/ui/layouts/index/menu/MenuSection';
 import { ServiceSection } from 'components/ui/layouts/index/service/ServiceSection';
 import { Footer } from 'components/ui/parts/footer/Footer';
 
-export const Index = () => {
+export const IndexContents = () => {
   return (
     <>
       <Head>

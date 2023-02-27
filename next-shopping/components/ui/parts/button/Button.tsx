@@ -1,18 +1,15 @@
-import Link from 'next/link';
+import { SerializedStyles } from '@emotion/serialize';
 
 import { EButton } from './ButtonCss';
 
 type Props = {
-  href: string;
+  setCss?: SerializedStyles;
   children: React.ReactNode;
 };
 
 export const Button = (props: Props) => {
-  const { children, href } = props;
+  const { setCss, children } = props;
+  console.log(props);
 
-  return (
-    <Link href={href} css={EButton}>
-      {children}
-    </Link>
-  );
+  return <button css={[EButton, setCss]}>{children}</button>;
 };

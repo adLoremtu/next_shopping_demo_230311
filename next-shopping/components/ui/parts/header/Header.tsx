@@ -76,7 +76,7 @@ export const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href='#' title='ユーザ情報'>
+          <Link href='/mypage' title='ユーザ情報'>
             <FontAwesomeIcon icon={faUserAlt} css={[EIcon, EIconHover]} />
           </Link>
         </li>

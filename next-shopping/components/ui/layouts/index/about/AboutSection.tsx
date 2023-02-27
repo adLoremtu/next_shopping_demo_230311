@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ESection } from 'components/pages/index/indexCss';
+import { ESection } from 'components/pages/index/IndexContentsCss';
 import { EAboutSection, EAboutImg, EAboutMainTitle, EAboutSubTitle, EAboutDescription } from './AboutSectionCss';
 
 export const AboutSection = () => {

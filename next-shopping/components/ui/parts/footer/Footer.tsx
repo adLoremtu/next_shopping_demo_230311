@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-import { ESection } from 'components/pages/index/indexCss';
+import { ESection } from 'components/pages/index/IndexContentsCss';
 import {
   FooterSectionWrap,
   FooterSectionMain,
