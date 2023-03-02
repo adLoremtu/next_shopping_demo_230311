@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSignInAlt,
@@ -12,6 +13,7 @@ import {
 
 import {
   EHeader,
+  EHeaderPositionInherit,
   ETitle,
   EIcon,
   ENavList,
@@ -32,33 +34,38 @@ export const Header = () => {
     ScrollCloseSideMenuHooks({ setSideMenuState });
   }, [setSideMenuState]);
 
+  const router = useRouter();
+  const isTop = router.pathname === '/';
+
   return (
-    <header css={EHeader}>
+    <header css={isTop ? [EHeader] : [EHeader, EHeaderPositionInherit]}>
       <Link href='/' css={ETitle}>
         FooDely
       </Link>
-      <ul css={[ENavList, sideMenuState && ENavListActive]}>
-        <li>
-          <Link href='#home' css={ENavLink} scroll={false}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href='#about' css={ENavLink} scroll={false}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link href='#menu' css={ENavLink} scroll={false}>
-            Menu
-          </Link>
-        </li>
-        <li>
-          <Link href='#service' css={ENavLink} scroll={false}>
-            Service
-          </Link>
-        </li>
-      </ul>
+      {isTop && (
+        <ul css={[ENavList, sideMenuState && ENavListActive]}>
+          <li>
+            <Link href='#home' css={ENavLink} scroll={false}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href='#about' css={ENavLink} scroll={false}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href='#menu' css={ENavLink} scroll={false}>
+              Menu
+            </Link>
+          </li>
+          <li>
+            <Link href='#service' css={ENavLink} scroll={false}>
+              Service
+            </Link>
+          </li>
+        </ul>
+      )}
       <ul css={EIconList}>
         <li>
           <Link href='#' title='カート'>
@@ -66,12 +73,12 @@ export const Header = () => {
           </Link>
         </li>
         <li>
-          <Link href='#' title='ログイン'>
+          <Link href='/login' title='ログイン'>
             <FontAwesomeIcon icon={faSignInAlt} css={[EIcon, EIconHover]} />
           </Link>
         </li>
         <li>
-          <Link href='#' title='サインアップ'>
+          <Link href='/signup' title='サインアップ'>
             <FontAwesomeIcon icon={faUserPlus} css={[EIcon, EIconHover]} />
           </Link>
         </li>
@@ -85,13 +92,15 @@ export const Header = () => {
             <FontAwesomeIcon icon={faSignOutAlt} css={[EIcon, EIconHover]} />
           </Link>
         </li>
-        <li>
-          <FontAwesomeIcon
-            icon={faBars}
-            css={[EIcon, EIconBar]}
-            onClick={() => ToggleSideMenuHooks({ setSideMenuState })}
-          />
-        </li>
+        {isTop && (
+          <li>
+            <FontAwesomeIcon
+              icon={faBars}
+              css={[EIcon, EIconBar]}
+              onClick={() => ToggleSideMenuHooks({ setSideMenuState })}
+            />
+          </li>
+        )}
       </ul>
     </header>
   );

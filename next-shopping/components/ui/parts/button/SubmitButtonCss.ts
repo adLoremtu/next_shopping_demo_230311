@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const EButton = css`
+export const ESubmitButton = css`
   display: inline-block;
   padding: 10px 20px;
   background: var(--main-color);
@@ -9,5 +9,9 @@ export const EButton = css`
 
   &:hover {
     background: var(--main-highlight-color);
+  }
+  
+  &:disabled {
+    background: #999;
   }
 `

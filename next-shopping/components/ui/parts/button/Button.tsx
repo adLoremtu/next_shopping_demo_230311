@@ -9,7 +9,6 @@ type Props = {
 
 export const Button = (props: Props) => {
   const { setCss, children } = props;
-  console.log(props);
 
   return <button css={[EButton, setCss]}>{children}</button>;
 };

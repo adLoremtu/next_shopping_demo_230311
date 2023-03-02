@@ -6,6 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const global = css`
     :root {
       --main-color: #ff702a;
+      --main-highlight-color: #2a51ff;
       --text-color: #fff;
       --bg-color: #1e1c2a;
       --big-font: 5rem;

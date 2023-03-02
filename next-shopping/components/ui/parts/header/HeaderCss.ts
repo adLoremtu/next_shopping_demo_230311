@@ -21,6 +21,10 @@ export const EHeader = css`
   }
 `;
 
+export const EHeaderPositionInherit = css`
+  position: inherit;
+`
+
 export const ETitle = css`
   color: var(--main-color);
   font-weight: 600;
