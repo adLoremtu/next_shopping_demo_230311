@@ -2,11 +2,13 @@ import type { AppProps } from 'next/app';
 import { Global, css } from '@emotion/react';
 import 'modern-css-reset/dist/reset.min.css';
 
+import { CheckLoginStatus } from '@/features/checkLoginStatus/hooks/CheckLoginStatus';
+
 export default function App({ Component, pageProps }: AppProps) {
   const global = css`
     :root {
       --main-color: #ff702a;
-      --main-highlight-color: #2a51ff;
+      --main-highlight-color: #ffc999;
       --text-color: #fff;
       --bg-color: #1e1c2a;
       --big-font: 5rem;
@@ -54,7 +56,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Global styles={global} />
-      <Component {...pageProps} />
+      <CheckLoginStatus>
+        <Component {...pageProps} />
+      </CheckLoginStatus>
     </>
   );
 }
