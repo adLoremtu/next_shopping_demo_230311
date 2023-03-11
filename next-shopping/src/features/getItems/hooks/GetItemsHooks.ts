@@ -34,7 +34,6 @@ export const GetItemsHooks = () => {
 
   useEffect(() => {
     const docRef = ResFireStoreCollection(info);
-    // let docRef = resFireStoreCollection();
 
     if (docRef === null) return;
 

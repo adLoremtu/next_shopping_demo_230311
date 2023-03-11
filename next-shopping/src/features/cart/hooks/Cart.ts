@@ -1,22 +1,17 @@
 import { useEffect, useState } from 'react';
-import { ItemResultsType } from '../../../@types/firebase';
 import Cookie from 'js-cookie';
 import { useRouter } from 'next/router';
 
-type CartItem = ItemResultsType & { quantity: number };
-
-type Cart = {
-  items: CartItem[];
-  total: number;
-};
+import { ItemResultsType } from '@/@types/firebase';
+import { CartItemType, CartType } from '@/@types/cart';
 
 const checkCookieCart = () => {
   const cookieCartParam = Cookie.get('cart');
   const isCookieUndefined = typeof cookieCartParam !== 'undefined';
   const cartContext = isCookieUndefined
     ? {
-        items: JSON.parse(cookieCartParam) as CartItem[],
-        total: JSON.parse(cookieCartParam).reduce((total: number, cartItem: CartItem) => {
+        items: JSON.parse(cookieCartParam) as CartItemType[],
+        total: JSON.parse(cookieCartParam).reduce((total: number, cartItem: CartItemType) => {
           return total + cartItem.price * cartItem.quantity;
         }, 0) as number,
       }
@@ -30,7 +25,7 @@ const checkCookieCart = () => {
 
 export const CartHooks = () => {
   const router = useRouter();
-  const [cart, setCart] = useState<Cart>(checkCookieCart());
+  const [cart, setCart] = useState<CartType>(checkCookieCart());
   
   useEffect(() => {
     console.log('cookie.get before = ', JSON.parse(Cookie.get('cart') || '[]'));

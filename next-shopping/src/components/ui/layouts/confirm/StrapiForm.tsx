@@ -9,7 +9,7 @@ import { SubmitButton } from '@/components/ui/parts/button/SubmitButton';
 import { ErrorMessage } from '@/components/ui/parts/error/errorMessage';
 import { Form, FormInput, FormButton } from '@/components/ui/parts/form/FormCss';
 import { ConfirmWrapper } from '@/components/pages/confirm/ConfirmCss';
-import { LoginStatusContext } from '@/features/checkLoginStatus/hooks/CheckLoginStatus';
+import { LoginStatusContext } from '@/features/checkLoginStatus/hooks/CheckLoginStatusHooks';
 import { CartHooks } from '@/features/cart/hooks/Cart';
 
 type ItemRecordFireStoreType = {

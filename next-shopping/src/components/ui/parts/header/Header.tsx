@@ -27,7 +27,7 @@ import { ScrollCloseSideMenuHooks } from '@/features/changeSideMenu/hooks/Change
 import { ChangeSideMenuState } from '@/features/changeSideMenu/state/ChangeSideMenuState';
 import { GetPageUrlPathHooks } from '@/features/getPageUrlPath/hooks/GetPageUrlPathHooks';
 import { Logout } from '@/features/logout/hooks/Logout';
-import { LoginStatusContext } from '@/features/checkLoginStatus/hooks/CheckLoginStatus';
+import { LoginStatusContext } from '@/features/checkLoginStatus/hooks/CheckLoginStatusHooks';
 
 export const Header = () => {
   const { sideMenuState, setSideMenuState } = ChangeSideMenuState();

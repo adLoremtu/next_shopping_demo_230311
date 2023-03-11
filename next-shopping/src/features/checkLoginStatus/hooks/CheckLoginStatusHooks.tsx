@@ -1,21 +1,18 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
+
 import { fireAuth } from '@/libs/firebase';
+import { LoginStatusType } from '@/@types/login';
 
 type Props = {
   children: React.ReactNode
-}
-
-type LoginStatusType = {
-  isLoggedIn: boolean;
-  uid?: string
 }
 
 export const LoginStatusContext = createContext<LoginStatusType>({
   isLoggedIn: false
 });
 
-export const CheckLoginStatus = (props: Props) => {
+export const CheckLoginStatusHooks = (props: Props) => {
   const { children } = props;
   const [isLoginStatus, setIsLoginStatus] = useState<LoginStatusType>({
     isLoggedIn: false
