@@ -14,6 +14,7 @@ export const LoginHooks = () => {
   // ログイン処理
   const loginFunction = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsButtonDisabled(true);
 
     setError('');
 
@@ -24,6 +25,7 @@ export const LoginHooks = () => {
       })
       .catch(() => {
         setError('ログインできませんでした。入力情報を再度確認してみてください。');
+        setIsButtonDisabled(false);
       });
   };
 

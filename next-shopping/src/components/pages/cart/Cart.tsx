@@ -58,7 +58,7 @@ export const Cart = () => {
         ) : null}
         <h3 css={CartCssTotalCost}>Total: {total}円</h3>
         <div css={CartCssButtonWrap}>
-          <LinkButton href='/menu'>Watch Menus</LinkButton>
+          <LinkButton href='/menu'>Watch All Menu</LinkButton>
           <LinkButton href='/confirm' disabled={total !== 0}>
             Credit Card Payment
           </LinkButton>

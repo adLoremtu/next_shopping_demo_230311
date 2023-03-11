@@ -12,7 +12,7 @@ export const HomeSection = () => {
         <h2 css={EHomeSubTitle}>
           Food The <br /> Most Precious Things
         </h2>
-        <LinkButton href='/menu'>Today&#39;s Menu</LinkButton>
+        <LinkButton href='/menu'>Watch All Menu</LinkButton>
       </div>
       <div>
         <Image src='/home.png' alt='main photo' width={768} height={512} css={EHomeImg} />

@@ -21,6 +21,7 @@ export const SignUpHooks = () => {
     setUnknownError('');
     setEmailError('');
     setPasswordError('');
+    setIsButtonDisabled(true)
 
     // firestoreにデータを登録
     createUserWithEmailAndPassword(fireAuth, email, password)
@@ -46,7 +47,9 @@ export const SignUpHooks = () => {
               console.log(errorCode, errorMessage);
             });
         } catch (err) {
+          setUnknownError('エラーにより登録ができませんでした。恐れ入りますが再度お試しください。');
           console.log('= error =', err);
+          setIsButtonDisabled(false);
         }
       })
       .catch((err) => {
@@ -60,6 +63,7 @@ export const SignUpHooks = () => {
         } else {
           setUnknownError('エラーにより登録ができませんでした。恐れ入りますが再度お試しください。');
         }
+        setIsButtonDisabled(false);
       });
   };
 
