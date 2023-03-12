@@ -4,6 +4,7 @@ import React from 'react';
 type Props = {
   setCss?: SerializedStyles;
   children: React.ReactNode;
+  // eslint-disable-next-line no-unused-vars
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
